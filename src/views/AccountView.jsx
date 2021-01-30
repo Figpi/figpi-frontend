@@ -32,6 +32,8 @@ function AccountView() {
     fetchData();
   }, []);
 
+  console.log(process.env.BASE_API_ENDPOINT);
+
   return (
     <div className="dash--board">
       <Topbar />
