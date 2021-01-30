@@ -17,13 +17,13 @@ function Uncounted() {
 
   // Props to component: <FileUploader/>
   let uploader_props = {
-    endpoint: "http://figpi-backend.herokuapp.com/api/upload/",
+    endpoint: "http://127.0.0.1:8000/api/upload/",
   };
 
   // Uncounted data
   const uc_props = {
     table_title: "Uncounted",
-    api_endpoint: "http://figpi-backend.herokuapp.com/api/uncounted/",
+    api_endpoint: "http://127.0.0.1:8000/api/uncounted/",
   };
 
   const [data, setData] = useState({});

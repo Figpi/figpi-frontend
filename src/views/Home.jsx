@@ -15,12 +15,12 @@ function Home() {
 
   const uc_props = {
     table_title: "Uncounted",
-    api_endpoint: "http://figpi-backend.herokuapp.com/api/uncounted/",
+    api_endpoint: "http://127.0.0.1:8000/api/uncounted/",
   };
 
   const co_props = {
     table_title: "Counted",
-    api_endpoint: "http://figpi-backend.herokuapp.com/api/comaster/",
+    api_endpoint: "http://127.0.0.1:8000/api/comaster/",
   };
 
   return (

@@ -109,7 +109,7 @@ export default function Datatable(props) {
   // PROPS FOR MENU CHILD-COMPONENTS
   let menu_props = {
     menu_title: props.table_title,
-    upload_ep: "http://figpi-backend.herokuapp.com/api/upload/",
+    upload_ep: "http://127.0.0.1:8000/api/upload/",
     res: results,
     updateRequest,
   };

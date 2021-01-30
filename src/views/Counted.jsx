@@ -18,7 +18,7 @@ function Counted() {
   // Uncounted data
   const co_props = {
     table_title: "Counted",
-    api_endpoint: "http://figpi-backend.herokuapp.com/api/comaster/",
+    api_endpoint: "http://127.0.0.1:8000/api/comaster/",
   };
 
   const [data, setData] = useState({});
