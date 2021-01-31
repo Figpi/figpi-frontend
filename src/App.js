@@ -20,27 +20,32 @@ import Login from "./views/Login";
 import SelectStore from "./views/SelectStore";
 import ResetPass from "./views/ResetPass";
 
+// Routing
+import ProtectedRoute from "./router/ProtectedRoute";
+
 function App() {
   return (
     <div className="App">
       <Router>
         <main>
           <Switch>
-            <Route path="/" exact component={HomeView} />
-            <Route path="/analytics" component={AnalyticsView} />
-            <Route path="/storage" component={StorageView} />
-
             <Route path="/login" component={Login} />
-            <Route path="/select_store" component={SelectStore} />
-            <Route path="/reset" component={ResetPass} />
-            <Route path="/god_view" component={GodView} />
+            <ProtectedRoute exact={true} path="/" component={HomeView} />
+            <ProtectedRoute path="/analytics" component={AnalyticsView} />
+            <ProtectedRoute path="/storage" component={StorageView} />
+            <ProtectedRoute path="/account" component={AccountView} />
+            <ProtectedRoute path="/god_view" component={GodView} />
 
-            <Route path="/uncounted" component={Uncounted} />
-            <Route path="/counted" component={Counted} />
+            <ProtectedRoute path="/select_store" component={SelectStore} />
+            <ProtectedRoute path="/reset" component={ResetPass} />
+            <ProtectedRoute path="/uncounted" component={Uncounted} />
+            <ProtectedRoute path="/counted" component={Counted} />
 
-            <Route path="/account" component={AccountView} />
-            <Route path="/statistics" component={StatisticsView} />
-            <Route path="/build-analytics" component={BuildAnalytics} />
+            <ProtectedRoute path="/statistics" component={StatisticsView} />
+            <ProtectedRoute
+              path="/build-analytics"
+              component={BuildAnalytics}
+            />
           </Switch>
         </main>
       </Router>
