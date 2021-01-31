@@ -103,6 +103,24 @@ function Sidebar() {
             ) : (
               <p></p>
             )}
+
+            {isAdmin ? (
+              <li className="nav-item">
+                {location.pathname === "/demo" ? (
+                  <Link to="/demo" className="nav-link active">
+                    <GiEyeTarget />
+                    Demo Page
+                  </Link>
+                ) : (
+                  <Link to="/demo" className="nav-link">
+                    <GiEyeTarget />
+                    Demo Page
+                  </Link>
+                )}
+              </li>
+            ) : (
+              <p></p>
+            )}
           </ul>
 
           <h6 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
