@@ -22,10 +22,10 @@ function BreadCrumbBar() {
 
   return (
     <>
-      <div className="bc-wrapper  bg-light mb-4">
+      <div className="bc-wrapper bg-light mb-4">
         <nav aria-label="breadcrumb">
-          <div class="container">
-            <ol className="breadcrumb bg-light py-3">
+          <div className="container">
+            <ol className="breadcrumb bg-light px-0 py-3">
               {path.map((item, keys) => {
                 if (path.indexOf(item) === path.length) {
                   return (

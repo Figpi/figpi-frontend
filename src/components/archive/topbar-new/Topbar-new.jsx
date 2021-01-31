@@ -1,9 +1,13 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { AiOutlineMenu } from "react-icons/ai";
+import {
+  AiOutlineMenu,
+  AiOutlineMenuUnfold,
+  AiOutlineMenuFold,
+} from "react-icons/ai";
 import { IconContext } from "react-icons";
 
-function Topbar() {
+function Topbar(props) {
   const location = useLocation();
 
   let pageTitle = "Figpi"; // Set Default Title

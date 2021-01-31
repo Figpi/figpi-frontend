@@ -23,6 +23,7 @@ import ResetPass from "../views/ResetPass";
 
 // Demo page
 import DemoView from "../views/DemoView";
+import DemoViewTwo from "../views/DemoViewTwo";
 
 // Protected Route Function
 function ProtectedRoute(props) {
@@ -57,6 +58,7 @@ function Routes() {
         <ProtectedRoute path="/build-analytics" component={BuildAnalytics} />
 
         <ProtectedRoute path="/demo" component={DemoView} />
+        <ProtectedRoute path="/demo2" component={DemoViewTwo} />
       </Switch>
     </>
   );

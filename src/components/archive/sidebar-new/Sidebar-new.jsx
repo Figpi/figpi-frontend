@@ -18,7 +18,7 @@ function Sidebar() {
   const icon_size = 25;
 
   return (
-    <div className="side--bar-n">
+    <div className="side--bar-new">
       <nav className="navbar bg-light">
         <ul className="navbar-nav">
           <li className="nav-link">
