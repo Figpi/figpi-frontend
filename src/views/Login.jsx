@@ -18,8 +18,9 @@ function Login() {
               <div className="mb-4">
                 <h1 className="display-4">Log in</h1>
                 <small className="text-muted">
-                  Log in with your connected company e-mail to get access to the
-                  inventory management platform.
+                  Log in with your connected e-mail to get access to the
+                  <span className="figpi-green"> Figpi</span> data-analytics
+                  platform.
                 </small>
               </div>
               <form
