@@ -1,5 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import { AiOutlineMenu } from "react-icons/ai";
+import { IconContext } from "react-icons";
 
 function Topbar() {
   const location = useLocation();
@@ -9,14 +11,21 @@ function Topbar() {
     pageTitle = "Figpi - God View"; // Conditional Title update
   }
 
-  console.log(location);
+  const toggleSidebar = () => {
+    console.log("clicked");
+  };
 
   return (
     <div className="top--bar">
-      <header className="navbar navbar-theme bg-dark flex-md-nowrap p-0 shadow">
-        <Link to="/" className="navbar-brand col-md-3 col-lg-2 mr-0 px-3 upper">
-          {pageTitle}
-        </Link>
+      <header className="navbar navbar-theme bg-dark flex-md-nowrap px-2 py-2 shadow">
+        <div className="menu-toggler">
+          <button className="btn" onClick={toggleSidebar}>
+            <IconContext.Provider value={{ className: "menu-toggler-icon" }}>
+              <AiOutlineMenu size={25} />
+            </IconContext.Provider>
+          </button>
+        </div>
+
         <button
           className="navbar-toggler position-absolute d-md-none collapsed"
           type="button"

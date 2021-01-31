@@ -361,6 +361,15 @@ a {
   }
 }
 
+// Sidebar new
+.side--bar-n {
+  display: none;
+}
+
+.side--bar.active {
+  display: block;
+}
+
 // TOPBAR
 .top--bar {
   .navbar-theme {
