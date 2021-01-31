@@ -23,7 +23,7 @@ function Uncounted() {
   // Uncounted data
   const uc_props = {
     table_title: "Uncounted",
-    api_endpoint: "http://127.0.0.1:8000/api/uncounted/",
+    api_endpoint: "https://figpi-backend.herokuapp.com/api/uncounted/",
   };
 
   const [data, setData] = useState({});
@@ -33,7 +33,7 @@ function Uncounted() {
   var myHeaders = new Headers();
   myHeaders.append(
     "Authorization",
-    "Token 37ba188c2184d0009fd814a17ec696c39de9644e"
+    "Token 420c32eb73a6dd8b3dbbba3af819b63bc89c1061"
   );
 
   // Set options for Request

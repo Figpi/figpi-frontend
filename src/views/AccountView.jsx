@@ -8,6 +8,7 @@ import Topbar from "../components/layouts/topbar/Topbar";
 // Icon-imports
 import { IconContext } from "react-icons";
 import { AiFillPlusCircle } from "react-icons/ai";
+import BreadCrumbBar from "../components/layouts/breadcrumb/BreadCrumbBar";
 
 function AccountView() {
   const page_title = "Account";
@@ -41,6 +42,7 @@ function AccountView() {
         <div className="row">
           <Sidebar />
           <main className="col-md-9 ml-sm-auto col-lg-10 px-lg-5 px-md-4 mt-5">
+            <BreadCrumbBar />
             <div className="view-bar">
               <div className="title-wrapper">
                 <h3>{page_title}</h3>

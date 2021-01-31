@@ -5,42 +5,50 @@ function BreadCrumbBar() {
   let path = [
     {
       url: "/",
-      name: "dashboard",
+      name: "Dashboard",
       status: false,
     },
     {
       url: "/analytics",
-      name: "analytics",
+      name: "Analytics",
       status: false,
     },
     {
       url: "/counted",
-      name: "counted",
+      name: "Counted",
       status: true,
     },
   ];
 
+  console.log(path.length);
+
   return (
     <>
-      <nav className="navbar navbar-light bg-light">
-        <div className="container-fluid">
-          <div>
-            <nav aria-label="breadcrumb">
-              <ol className="breadcrumb bg-light">
-                <li className="breadcrumb-item">
-                  <Link to={path[0].url}>{path[0].name}</Link>
-                </li>
-                <li className="breadcrumb-item">
-                  <Link to={path[1].url}>{path[1].name}</Link>
-                </li>
-                <li className="breadcrumb-item active" aria-current="page">
-                  <Link to={path[2].url}>{path[2].name}</Link>
-                </li>
-              </ol>
-            </nav>
-          </div>
-        </div>
-      </nav>
+      <div className="bc-wrapper mb-4">
+        <nav aria-label="breadcrumb">
+          <ol className="breadcrumb py-3 bg-light">
+            {path.map((item, keys) => {
+              if (path.indexOf(item) === path.length) {
+                return (
+                  <li key={keys} className="breadcrumb-item">
+                    <Link className="figpi-green-active" to={item.url}>
+                      {item.name}
+                    </Link>
+                  </li>
+                );
+              } else {
+                return (
+                  <li key={keys} className="breadcrumb-item">
+                    <Link className="figpi-green" to={item.url}>
+                      {item.name}
+                    </Link>
+                  </li>
+                );
+              }
+            })}
+          </ol>
+        </nav>
+      </div>
     </>
   );
 }

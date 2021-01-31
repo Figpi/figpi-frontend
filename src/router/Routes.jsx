@@ -21,6 +21,9 @@ import Login from "../views/Login";
 import SelectStore from "../views/SelectStore";
 import ResetPass from "../views/ResetPass";
 
+// Demo page
+import DemoView from "../views/DemoView";
+
 // Protected Route Function
 function ProtectedRoute(props) {
   const Component = props.component;
@@ -52,6 +55,8 @@ function Routes() {
 
         <ProtectedRoute path="/statistics" component={StatisticsView} />
         <ProtectedRoute path="/build-analytics" component={BuildAnalytics} />
+
+        <ProtectedRoute path="/demo" component={DemoView} />
       </Switch>
     </>
   );
