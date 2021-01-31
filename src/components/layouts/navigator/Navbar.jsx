@@ -29,7 +29,7 @@ function Navbar() {
   return (
     <>
       <div className="top--bar">
-        <header className="navbar navbar-theme bg-dark flex-md-nowrap px-2 py-2 shadow">
+        <header className="navbar sticky-top navbar-theme bg-dark flex-md-nowrap px-2 py-2 shadow">
           <div className="menu-toggler">
             <button className="btn" onClick={showSidebar}>
               <IconContext.Provider value={{ className: "menu-toggler-icon" }}>
