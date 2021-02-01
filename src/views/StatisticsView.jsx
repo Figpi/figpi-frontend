@@ -1,22 +1,23 @@
 import React from "react";
 
 // Layout components
-import Sidebar from "../components/layouts/sidebar/Sidebar";
-import Topbar from "../components/layouts/topbar/Topbar";
+import Navbar from "../components/layouts/navigator/Navbar";
+import BreadCrumbBar from "../components/layouts/breadcrumb/BreadCrumbBar";
 
 function StatisticsView() {
+  const page_title = "Statistics";
+  document.title = `Figpi - ${page_title}`;
+
   return (
-    <div className="dash--board">
-      <Topbar />
-      <div className="container-fluid content--area">
-        <div class="row">
-          <Sidebar />
-          <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-            <p>Statistics</p>
-          </main>
+    <>
+      <Navbar />
+      <BreadCrumbBar />
+      <div className="dash--board">
+        <div className="container content--area">
+          <h3>{page_title}</h3>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

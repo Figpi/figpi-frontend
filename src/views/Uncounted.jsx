@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 // Layout components
-import Sidebar from "../components/layouts/sidebar/Sidebar";
-import Topbar from "../components/layouts/topbar/Topbar";
+import Navbar from "../components/layouts/navigator/Navbar";
+import BreadCrumbBar from "../components/layouts/breadcrumb/BreadCrumbBar";
 
 // Core / Feature componets
-//import DataTable from "../components/core/datatable/Datatable";
 import FileUploader from "../components/utils/FileUploader";
 import Datatable from "../components/core/ndata/Datatable";
 
@@ -44,18 +43,16 @@ function Uncounted() {
   };
 
   return (
-    <div className="dash--board">
-      <Topbar />
-      <div className="container-fluid content--area">
-        <div className="row">
-          <Sidebar />
-          <main className="col-md-9 ml-sm-auto col-lg-10 px-md-4 px-lg-5 mt-5">
-            <h3>{page_title}</h3>
-            <Datatable {...uc_props} />
-          </main>
+    <>
+      <Navbar />
+      <BreadCrumbBar />
+      <div className="dash--board">
+        <div className="container content--area">
+          <h3>{page_title}</h3>
+          <Datatable {...uc_props} />
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

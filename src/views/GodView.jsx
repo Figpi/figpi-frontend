@@ -1,8 +1,8 @@
 import React from "react";
 
 // Layout components
-import Sidebar from "../components/layouts/sidebar/Sidebar";
-import Topbar from "../components/layouts/topbar/Topbar";
+import Navbar from "../components/layouts/navigator/Navbar";
+import BreadCrumbBar from "../components/layouts/breadcrumb/BreadCrumbBar";
 
 // Core / Feature components
 import Datatable from "../components/core/datatable/Datatable";
@@ -51,20 +51,17 @@ function GodView() {
     ],
   };
   return (
-    <div className="god--view">
-      <Topbar />
-      <div className="container-fluid content--area">
-        <div className="row">
-          <Sidebar />
-
-          <main className="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-            <Datatable data={group_data} />
-            <Datatable data={user_data} />
-            <Datatable data={user_data} />
-          </main>
+    <>
+      <Navbar />
+      <BreadCrumbBar />
+      <div className="god--view">
+        <div className="container content--area">
+          <Datatable data={group_data} />
+          <Datatable data={user_data} />
+          <Datatable data={user_data} />
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

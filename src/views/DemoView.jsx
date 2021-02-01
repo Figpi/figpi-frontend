@@ -1,5 +1,4 @@
 import React from "react";
-import { useState, useEffect } from "react";
 
 // Dashboard wide Components
 import Navbar from "../components/layouts/navigator/Navbar";

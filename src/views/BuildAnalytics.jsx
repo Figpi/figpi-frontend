@@ -1,12 +1,11 @@
 import React from "react";
 
 // Layout components
-import Sidebar from "../components/layouts/sidebar/Sidebar";
-import Topbar from "../components/layouts/topbar/Topbar";
+import Navbar from "../components/layouts/navigator/Navbar";
+import BreadCrumbBar from "../components/layouts/breadcrumb/BreadCrumbBar";
 
 // Core / Feature Nodes
 import TestNode from "../components/core/builderNodes/testNode";
-import BreadCrumbBar from "../components/layouts/breadcrumb/BreadCrumbBar";
 
 function BuildAnalytics() {
   // REACT HELMET
@@ -66,7 +65,7 @@ function BuildAnalytics() {
     ref.addEventListener("click", function () {
       let drawer = document.getElementById(`drawer-${ref.id}`);
 
-      if (drawer.className.indexOf("visible") == -1) {
+      if (drawer.className.indexOf("visible") === -1) {
         drawer.className += " visible";
       } else {
         drawer.className = drawer.className.replace(" visible", "");
@@ -75,67 +74,64 @@ function BuildAnalytics() {
   });
 
   return (
-    <div className="dash--board">
-      <Topbar />
-      <div className="container-fluid content--area">
-        <div className="row">
-          <Sidebar />
-          <main className="col-md-9 ml-sm-auto col-lg-10 px-lg-5 px-md-4 mt-5">
-            <BreadCrumbBar />
-            <h3>{page_title}</h3>
+    <>
+      <Navbar />
+      <BreadCrumbBar />
+      <div className="dash--board">
+        <div className="container content--area">
+          <h3>{page_title}</h3>
 
-            <div className="d-wrapper mt-4">
-              <div className="d-canvas">
-                <div className="d-block" draggable="true">
-                  {/* Item section*/}
-                  <div className="d-block-item">
-                    <h3>Data from API</h3>
-                    <span>
-                      Pull from source:{" "}
-                      <a href="https://randomuser.me/api/">
-                        https://randomuser.me/api/
-                      </a>
-                    </span>
-                  </div>
-
-                  {/* Drawer section */}
-                  <a className="drawer-toggler" id="001">
-                    show/hide
-                  </a>
-                  <div className="d-block-drawer" id="drawer-001">
-                    datatable
-                  </div>
-                </div>
-              </div>
-
-              <div class="d-aside">
-                <div class="sidebar-header">
-                  <h3>Components</h3>
+          <div className="d-wrapper mt-4">
+            <div className="d-canvas">
+              <div className="d-block" draggable="true">
+                {/* Item section*/}
+                <div className="d-block-item">
+                  <h3>Data from API</h3>
+                  <span>
+                    Pull from source:{" "}
+                    <a href="https://randomuser.me/api/">
+                      https://randomuser.me/api/
+                    </a>
+                  </span>
                 </div>
 
-                <div class="component-wrapper">
-                  <div class="component" draggable="true">
-                    <p>API data</p>
-                  </div>
-
-                  <div class="component" draggable="true">
-                    <p>Merge data-sources</p>
-                  </div>
-
-                  <div class="component" draggable="true">
-                    <p>File data</p>
-                  </div>
-
-                  <div class="component" draggable="true">
-                    <p>Filter</p>
-                  </div>
+                {/* Drawer section */}
+                <a href="#" className="drawer-toggler" id="001">
+                  show/hide
+                </a>
+                <div className="d-block-drawer" id="drawer-001">
+                  datatable
                 </div>
               </div>
             </div>
-          </main>
+
+            <div class="d-aside">
+              <div class="sidebar-header">
+                <h3>Components</h3>
+              </div>
+
+              <div class="component-wrapper">
+                <div class="component" draggable="true">
+                  <p>API data</p>
+                </div>
+
+                <div class="component" draggable="true">
+                  <p>Merge data-sources</p>
+                </div>
+
+                <div class="component" draggable="true">
+                  <p>File data</p>
+                </div>
+
+                <div class="component" draggable="true">
+                  <p>Filter</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

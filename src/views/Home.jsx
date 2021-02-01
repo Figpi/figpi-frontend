@@ -1,12 +1,11 @@
 import React from "react";
 
-// components
-import Sidebar from "../components/layouts/sidebar/Sidebar";
-import Topbar from "../components/layouts/topbar/Topbar";
+// layout components
+import Navbar from "../components/layouts/navigator/Navbar";
+import BreadCrumbBar from "../components/layouts/breadcrumb/BreadCrumbBar";
 
-import DataTable from "../components/core/datatable/Datatable";
+// Sub-component imports
 import Datatable from "../components/core/ndata/Datatable";
-import FileUploader from "../components/utils/FileUploader";
 
 function Home() {
   // Set page title
@@ -24,20 +23,18 @@ function Home() {
   };
 
   return (
-    <div className="dash--board">
-      <Topbar />
-      <div className="container-fluid content--area">
-        <div className="row">
-          <Sidebar />
-          <main className="col-md-9 ml-sm-auto col-lg-10 px-lg-5 px-md-4 mt-5">
-            <h3>{page_title}</h3>
-            <Datatable {...co_props} />
-            <Datatable {...uc_props} />
-            <Datatable {...co_props} />
-          </main>
+    <>
+      <Navbar />
+      <BreadCrumbBar />
+      <div className="dash--board">
+        <div className="container content--area">
+          <h3>{page_title}</h3>
+          <Datatable {...co_props} />
+          <Datatable {...uc_props} />
+          <Datatable {...co_props} />
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

@@ -1,9 +1,7 @@
 import React from "react";
-import { useState, useEffect, useCallback } from "react";
 
 // layout components
-import Sidebar from "../components/layouts/sidebar/Sidebar";
-import Topbar from "../components/layouts/topbar/Topbar";
+import Navbar from "../components/layouts/navigator/Navbar";
 import BreadCrumbBar from "../components/layouts/breadcrumb/BreadCrumbBar";
 
 // Sub-component imports
@@ -39,33 +37,30 @@ function StorageView() {
   };
 
   return (
-    <div className="dash--board">
-      <Topbar />
-      <div className="container-fluid content--area">
-        <Sidebar />
-        <div className="row">
-          <main className="col-md-9 ml-sm-auto col-lg-10 px-lg-5 px-md-4 mt-5">
-            {/* <BreadCrumbBar /> */}
-            <div className="view-bar">
-              <div className="title-wrapper">
-                <h3>{page_title}</h3>
-              </div>
-              <div className="view-bar-features">
-                <button className="btn">
-                  <IconContext.Provider value={{ className: "view-bar-icon" }}>
-                    <AiFillPlusCircle size={30} />
-                  </IconContext.Provider>
-                </button>
-              </div>
+    <>
+      <Navbar />
+      <BreadCrumbBar />
+      <div className="dash--board">
+        <div className="container content--area">
+          <div className="view-bar">
+            <div className="title-wrapper">
+              <h3>{page_title}</h3>
             </div>
+            <div className="view-bar-features">
+              <button className="btn">
+                <IconContext.Provider value={{ className: "view-bar-icon" }}>
+                  <AiFillPlusCircle size={30} />
+                </IconContext.Provider>
+              </button>
+            </div>
+          </div>
 
-            <AnalyticsNode data={node_1} />
-            <AnalyticsNode data={node_2} />
-            <AnalyticsNode data={node_3} />
-          </main>
+          <AnalyticsNode data={node_1} />
+          <AnalyticsNode data={node_2} />
+          <AnalyticsNode data={node_3} />
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
