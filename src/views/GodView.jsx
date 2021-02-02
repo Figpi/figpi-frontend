@@ -11,6 +11,20 @@ function GodView() {
   // Set page title
   document.title = "Figpi - God View";
 
+  // Path for BreadCrumbBar
+  let path = [
+    {
+      url: "/",
+      name: "Dashboard",
+      status: false,
+    },
+    {
+      url: "/god_view",
+      name: "God View",
+      status: false,
+    },
+  ];
+
   let user_data = {
     count: 2,
     next: null,
@@ -53,7 +67,7 @@ function GodView() {
   return (
     <>
       <Navbar />
-      <BreadCrumbBar />
+      <BreadCrumbBar path={path} />
       <div className="god--view">
         <div className="container content--area">
           <Datatable data={group_data} />

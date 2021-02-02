@@ -12,6 +12,25 @@ function BuildAnalytics() {
   document.title = "Figpi - Analytics Builder";
   const page_title = "Analytics Builder";
 
+  // Path for BreadCrumbBar
+  let path = [
+    {
+      url: "/",
+      name: "Dashboard",
+      status: false,
+    },
+    {
+      url: "/analytics",
+      name: "Analytics",
+      status: false,
+    },
+    {
+      url: "/build-analytics",
+      name: "Analytics Builder",
+      status: true,
+    },
+  ];
+
   // Builder functions
   const drop_area = document.querySelector(".d-canvas");
   const drag_blocks = document.querySelectorAll(".d-block");
@@ -76,7 +95,7 @@ function BuildAnalytics() {
   return (
     <>
       <Navbar />
-      <BreadCrumbBar />
+      <BreadCrumbBar path={path} />
       <div className="dash--board">
         <div className="container content--area">
           <h3>{page_title}</h3>

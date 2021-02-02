@@ -15,6 +15,25 @@ function Counted() {
   const page_title = "Counted Data";
   // REACT HELMET END ----
 
+  // Path for BreadCrumbBar
+  let path = [
+    {
+      url: "/",
+      name: "Dashboard",
+      status: false,
+    },
+    {
+      url: "/analytics",
+      name: "Analytics",
+      status: false,
+    },
+    {
+      url: "/counted",
+      name: "Salling - Counted",
+      status: false,
+    },
+  ];
+
   // Uncounted data
   const co_props = {
     table_title: "Counted",
@@ -53,7 +72,7 @@ function Counted() {
   return (
     <>
       <Navbar />
-      <BreadCrumbBar />
+      <BreadCrumbBar path={path} />
       <div className="dash--board">
         <div className="container content--area">
           <h3>{page_title}</h3>

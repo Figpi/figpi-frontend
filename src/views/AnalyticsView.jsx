@@ -15,6 +15,20 @@ function StorageView() {
   document.title = "Figpi - Analytics";
   const page_title = "Analytics";
 
+  // Path for BreadCrumbBar
+  let path = [
+    {
+      url: "/",
+      name: "Dashboard",
+      status: false,
+    },
+    {
+      url: "/analytics",
+      name: "Analytics",
+      status: false,
+    },
+  ];
+
   let node_1 = {
     name: "Salling - Counted Data",
     url: "/counted",
@@ -39,7 +53,7 @@ function StorageView() {
   return (
     <>
       <Navbar />
-      <BreadCrumbBar />
+      <BreadCrumbBar path={path} />
       <div className="dash--board">
         <div className="container content--area">
           <div className="view-bar">

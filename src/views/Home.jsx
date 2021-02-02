@@ -12,6 +12,15 @@ function Home() {
   document.title = "Figpi - Dashboard";
   const page_title = "Dashboard";
 
+  // Path for routing
+  let path = [
+    {
+      url: "/",
+      name: "Dashboard",
+      status: false,
+    },
+  ];
+
   const uc_props = {
     table_title: "Uncounted",
     api_endpoint: "http://127.0.0.1:8000/api/uncounted/",
@@ -25,7 +34,7 @@ function Home() {
   return (
     <>
       <Navbar />
-      <BreadCrumbBar />
+      <BreadCrumbBar path={path} />
       <div className="dash--board">
         <div className="container content--area">
           <h3>{page_title}</h3>

@@ -12,10 +12,24 @@ function AccountView() {
   const page_title = "Account";
   document.title = `Figpi - ${page_title}`;
 
+  // Path for BreadCrumbBar
+  let path = [
+    {
+      url: "/",
+      name: "Dashboard",
+      status: false,
+    },
+    {
+      url: "/account",
+      name: "Account",
+      status: false,
+    },
+  ];
+
   return (
     <>
       <Navbar />
-      <BreadCrumbBar />
+      <BreadCrumbBar path={path} />
       <div className="dash--board">
         <div className="container content--area">
           <div className="view-bar">

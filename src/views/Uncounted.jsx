@@ -14,6 +14,25 @@ function Uncounted() {
   const page_title = "Uncounted Data";
   // REACT HELMET END ----
 
+  // Path for BreadCrumbBar
+  let path = [
+    {
+      url: "/",
+      name: "Dashboard",
+      status: false,
+    },
+    {
+      url: "/analytics",
+      name: "Analytics",
+      status: false,
+    },
+    {
+      url: "/uncounted",
+      name: "Salling - Uncounted",
+      status: false,
+    },
+  ];
+
   // Props to component: <FileUploader/>
   let uploader_props = {
     endpoint: "http://127.0.0.1:8000/api/upload/",
@@ -45,7 +64,7 @@ function Uncounted() {
   return (
     <>
       <Navbar />
-      <BreadCrumbBar />
+      <BreadCrumbBar path={path} />
       <div className="dash--board">
         <div className="container content--area">
           <h3>{page_title}</h3>

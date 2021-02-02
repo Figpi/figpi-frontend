@@ -8,10 +8,24 @@ function StatisticsView() {
   const page_title = "Statistics";
   document.title = `Figpi - ${page_title}`;
 
+  // Path for BreadCrumbBar
+  let path = [
+    {
+      url: "/",
+      name: "Dashboard",
+      status: false,
+    },
+    {
+      url: "/statistics",
+      name: "Statistics",
+      status: true,
+    },
+  ];
+
   return (
     <>
       <Navbar />
-      <BreadCrumbBar />
+      <BreadCrumbBar path={path} />
       <div className="dash--board">
         <div className="container content--area">
           <h3>{page_title}</h3>
