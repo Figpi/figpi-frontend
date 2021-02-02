@@ -85,7 +85,7 @@ function Navbar() {
               {AdminSidebarData.map((item, index) => {
                 return (
                   <li className="nav-item">
-                    {location.pathname === "/" ? (
+                    {location.pathname === item.path ? (
                       <Link to={item.path} className="nav-link active">
                         {item.icon}
                         {item.title}
@@ -108,7 +108,7 @@ function Navbar() {
               {DevSidebarData.map((item, index) => {
                 return (
                   <li className="nav-item">
-                    {location.pathname === "/" ? (
+                    {location.pathname === item.path ? (
                       <Link to={item.path} className="nav-link active">
                         {item.icon}
                         {item.title}
