@@ -102,7 +102,7 @@ function Navbar() {
             </ul>
 
             <h6 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-              <span>Built</span>
+              <span>Under Dev</span>
             </h6>
             <ul className="nav flex-column mb-2">
               {DevSidebarData.map((item, index) => {
