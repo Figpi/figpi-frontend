@@ -71,7 +71,6 @@ export default function Datatable(props) {
         const response = await fetch(search_endpoint, requestOptions)
           .then((response) => response.json())
           .then((data) => setResults(data));
-        console.log("Searched for:" + param);
       } catch (error) {}
     }
 
@@ -85,7 +84,6 @@ export default function Datatable(props) {
         const response = await fetch(endpoint, requestOptions)
           .then((response) => response.json())
           .then((data) => setResults(data));
-        console.log({ results });
       } catch (error) {}
     }
 
@@ -99,7 +97,6 @@ export default function Datatable(props) {
         const response = await fetch(endpoint, requestOptions)
           .then((response) => response.json())
           .then((data) => setResults(data));
-        console.log({ results });
       } catch (error) {}
     }
 
