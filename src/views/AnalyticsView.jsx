@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // layout components
 import Navbar from "../components/layouts/navigator/Navbar";
@@ -29,16 +30,19 @@ function StorageView() {
     },
   ];
 
+  let counted_route = "/analytics/" + btoa("counted");
+  let uncounted_route = "/analytics/" + btoa("uncounted");
+
   let node_1 = {
     name: "Salling - Counted Data",
-    url: "/counted",
+    url: counted_route,
     uuid: "47e12eaa-5cf0-4f9b-b393-14c5b6ea0e9b",
     status: 0,
   };
 
   let node_2 = {
     name: "Salling - Uncounted Data",
-    url: "/uncounted",
+    url: uncounted_route,
     uuid: "ab1da8d7-7928-4c3e-8d0a-792e78fe2b9b",
     status: 0,
   };
@@ -61,11 +65,13 @@ function StorageView() {
               <h3>{page_title}</h3>
             </div>
             <div className="view-bar-features">
-              <button className="btn">
-                <IconContext.Provider value={{ className: "view-bar-icon" }}>
-                  <AiFillPlusCircle size={30} />
-                </IconContext.Provider>
-              </button>
+              <Link to="/build-analytics">
+                <button className="btn">
+                  <IconContext.Provider value={{ className: "view-bar-icon" }}>
+                    <AiFillPlusCircle size={30} />
+                  </IconContext.Provider>
+                </button>
+              </Link>
             </div>
           </div>
 

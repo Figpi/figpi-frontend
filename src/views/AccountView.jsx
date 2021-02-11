@@ -34,7 +34,12 @@ function AccountView() {
         <div className="container content--area">
           <div className="view-bar">
             <div className="title-wrapper">
-              <h3>{page_title}</h3>
+              <h3>
+                {page_title}
+                <span class="badge rounded-pill bg-warning ml-2">
+                  Enterprise
+                </span>
+              </h3>
             </div>
             <div className="view-bar-features">
               <button className="btn">
@@ -45,7 +50,29 @@ function AccountView() {
             </div>
           </div>
 
-          <div className="account-area mt-4">
+          <div className="account-area mt-3">
+            <ul class="nav nav-pills mb-4">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">
+                  Account Info
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  Statistics
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link disabled"
+                  href="#"
+                  tabindex="-1"
+                  aria-disabled="true"
+                >
+                  Organization
+                </a>
+              </li>
+            </ul>
             <form>
               <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">

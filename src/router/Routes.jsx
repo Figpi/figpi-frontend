@@ -50,8 +50,8 @@ function Routes() {
 
         <ProtectedRoute path="/select_store" component={SelectStore} />
         <ProtectedRoute path="/reset" component={ResetPass} />
-        <ProtectedRoute path="/uncounted" component={Uncounted} />
-        <ProtectedRoute path="/counted" component={Counted} />
+        <ProtectedRoute path="/analytics/counted" component={Uncounted} />
+        <ProtectedRoute path="/analytics/uncounted" component={Counted} />
 
         <ProtectedRoute path="/statistics" component={StatisticsView} />
         <ProtectedRoute path="/build-analytics" component={BuildAnalytics} />
