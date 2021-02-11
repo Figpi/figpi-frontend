@@ -14,6 +14,7 @@ import { AiFillPlusCircle } from "react-icons/ai";
 function StorageView() {
   document.title = "Figpi - Analytics";
   const page_title = "Analytics";
+  const BASE_URL = "/analytics/";
 
   // Path for BreadCrumbBar
   let path = [
@@ -29,19 +30,16 @@ function StorageView() {
     },
   ];
 
-  let counted_route = "/analytics/counted";
-  let uncounted_route = "/analytics/uncounted";
-
   let node_1 = {
     name: "Salling - Counted Data",
-    url: "/counted",
+    url: BASE_URL.concat("counted"),
     uuid: "47e12eaa-5cf0-4f9b-b393-14c5b6ea0e9b",
     status: 0,
   };
 
   let node_2 = {
     name: "Salling - Uncounted Data",
-    url: "/uncounted",
+    url: BASE_URL.concat("uncounted"),
     uuid: "ab1da8d7-7928-4c3e-8d0a-792e78fe2b9b",
     status: 0,
   };
