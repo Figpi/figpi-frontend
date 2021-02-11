@@ -23,7 +23,7 @@ function Navbar() {
   const [sidebar, setSidebar] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
 
-  let isAdmin = true;
+  let isAdmin = false;
   const location = useLocation();
 
   return (
