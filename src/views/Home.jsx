@@ -9,8 +9,8 @@ import Datatable from "../components/core/ndata/Datatable";
 
 function Home() {
   // Set page title
-  document.title = "Figpi - Dashboard";
   const page_title = "Dashboard";
+  document.title = `${page_title} | Figpi`;
 
   // Path for routing
   let path = [

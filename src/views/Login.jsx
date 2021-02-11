@@ -7,7 +7,8 @@ import ParticlesConfig from "../components/utils/ParticlesConfig";
 
 function Login() {
   // Set page title
-  document.title = "Figpi - Login";
+  const page_title = "Login";
+  document.title = `${page_title} | Figpi`;
 
   return (
     <div className="login--screen p-0">

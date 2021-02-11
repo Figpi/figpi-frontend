@@ -9,7 +9,8 @@ import Datatable from "../components/core/datatable/Datatable";
 
 function GodView() {
   // Set page title
-  document.title = "Figpi - God View";
+  const page_title = "God View";
+  document.title = `${page_title} | Figpi`;
 
   // Path for BreadCrumbBar
   let path = [

@@ -9,8 +9,8 @@ import TestNode from "../components/core/builderNodes/testNode";
 
 function BuildAnalytics() {
   // REACT HELMET
-  document.title = "Figpi - Analytics Builder";
   const page_title = "Analytics Builder";
+  document.title = `${page_title} | Figpi`;
 
   // Path for BreadCrumbBar
   let path = [

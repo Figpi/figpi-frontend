@@ -11,8 +11,8 @@ import FileUploader from "../components/utils/FileUploader";
 
 function Counted() {
   // REACT HELMET --------
-  document.title = "Figpi - Counted";
   const page_title = "Counted Data";
+  document.title = `${page_title} | Figpi`;
   // REACT HELMET END ----
 
   // Path for BreadCrumbBar

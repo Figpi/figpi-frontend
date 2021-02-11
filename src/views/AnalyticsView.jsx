@@ -12,8 +12,9 @@ import { IconContext } from "react-icons";
 import { AiFillPlusCircle } from "react-icons/ai";
 
 function StorageView() {
-  document.title = "Figpi - Analytics";
   const page_title = "Analytics";
+  document.title = `${page_title} | Figpi`;
+
   const BASE_URL = "/analytics/";
 
   // Path for BreadCrumbBar

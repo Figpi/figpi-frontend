@@ -12,7 +12,8 @@ import NewPass from "../assets/images/online_protection_monochromatic.svg";
 
 function ResetPass() {
   // Set page title
-  document.title = "Figpi - Reset Password";
+  const page_title = "Reset Password";
+  document.title = `${page_title} | Figpi`;
 
   // change state
   var progress = {

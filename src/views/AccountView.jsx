@@ -10,7 +10,7 @@ import { AiFillPlusCircle } from "react-icons/ai";
 
 function AccountView() {
   const page_title = "Account";
-  document.title = `Figpi - ${page_title}`;
+  document.title = `${page_title} | Figpi`;
 
   // Path for BreadCrumbBar
   let path = [

@@ -15,8 +15,8 @@ import { AiFillPlusCircle } from "react-icons/ai";
 // Util-component imports
 
 function StorageView() {
-  document.title = "Figpi - Storage";
   const page_title = "Storage";
+  document.title = `${page_title} | Figpi`;
 
   // Path for BreadCrumbBar
   let path = [

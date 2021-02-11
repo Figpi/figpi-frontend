@@ -5,7 +5,9 @@ import ParticlesConfig from "../components/utils/ParticlesConfig";
 
 function SelectStore() {
   // Set page title
-  document.title = "Figpi - Select Store";
+  const page_title = "Select Store";
+  document.title = `${page_title} | Figpi`;
+
   return (
     <>
       <div className="container-fluid pr-0">

@@ -10,8 +10,8 @@ import Datatable from "../components/core/ndata/Datatable";
 
 function Uncounted() {
   // REACT HELMET --------
-  document.title = "Figpi - Uncounted";
   const page_title = "Uncounted Data";
+  document.title = `${page_title} | Figpi`;
   // REACT HELMET END ----
 
   // Path for BreadCrumbBar

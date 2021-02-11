@@ -6,7 +6,7 @@ import BreadCrumbBar from "../components/layouts/breadcrumb/BreadCrumbBar";
 
 function StatisticsView() {
   const page_title = "Statistics";
-  document.title = `Figpi - ${page_title}`;
+  document.title = `${page_title} | Figpi`;
 
   // Path for BreadCrumbBar
   let path = [
