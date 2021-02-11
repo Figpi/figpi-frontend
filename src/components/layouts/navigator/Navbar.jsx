@@ -78,51 +78,56 @@ function Navbar() {
               })}
             </ul>
 
-            <h6 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-              <span>Admin tools</span>
-            </h6>
-            <ul className="nav flex-column mb-2">
-              {AdminSidebarData.map((item, index) => {
-                return (
-                  <li className="nav-item">
-                    {location.pathname === item.path ? (
-                      <Link to={item.path} className="nav-link active">
-                        {item.icon}
-                        {item.title}
-                      </Link>
-                    ) : (
-                      <Link to={item.path} className="nav-link">
-                        {item.icon}
-                        {item.title}
-                      </Link>
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
-
-            <h6 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-              <span>Under Dev</span>
-            </h6>
-            <ul className="nav flex-column mb-2">
-              {DevSidebarData.map((item, index) => {
-                return (
-                  <li className="nav-item">
-                    {location.pathname === item.path ? (
-                      <Link to={item.path} className="nav-link active">
-                        {item.icon}
-                        {item.title}
-                      </Link>
-                    ) : (
-                      <Link to={item.path} className="nav-link">
-                        {item.icon}
-                        {item.title}
-                      </Link>
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
+            {isAdmin ? (
+              <>
+                <h6 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                  <span>Admin tools</span>
+                </h6>
+                <ul className="nav flex-column mb-2">
+                  {AdminSidebarData.map((item, index) => {
+                    return (
+                      <li className="nav-item">
+                        {location.pathname === item.path ? (
+                          <Link to={item.path} className="nav-link active">
+                            {item.icon}
+                            {item.title}
+                          </Link>
+                        ) : (
+                          <Link to={item.path} className="nav-link">
+                            {item.icon}
+                            {item.title}
+                          </Link>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+                <h6 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                  <span>Under Dev</span>
+                </h6>
+                <ul className="nav flex-column mb-2">
+                  {DevSidebarData.map((item, index) => {
+                    return (
+                      <li className="nav-item">
+                        {location.pathname === item.path ? (
+                          <Link to={item.path} className="nav-link active">
+                            {item.icon}
+                            {item.title}
+                          </Link>
+                        ) : (
+                          <Link to={item.path} className="nav-link">
+                            {item.icon}
+                            {item.title}
+                          </Link>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </>
+            ) : (
+              <></>
+            )}
           </div>
         </nav>
       </div>

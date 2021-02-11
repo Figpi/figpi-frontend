@@ -40,18 +40,18 @@ function Uncounted() {
 
   // Uncounted data
   const uc_props = {
-    table_title: "Uncounted",
-    api_endpoint: "https://figpi-backend.herokuapp.com/api/uncounted/",
+    table_title: "Counted",
+    api_endpoint: "http://127.0.0.1:8000/api/ucmaster/",
   };
 
   const [data, setData] = useState({});
   const [hasError, setErrors] = useState(false);
 
-  // Define Values in request header
+  // Define Values in rquest header
   var myHeaders = new Headers();
   myHeaders.append(
     "Authorization",
-    "Token 420c32eb73a6dd8b3dbbba3af819b63bc89c1061"
+    "Token 37ba188c2184d0009fd814a17ec696c39de9644e"
   );
 
   // Set options for Request
@@ -60,6 +60,18 @@ function Uncounted() {
     headers: myHeaders,
     redirect: "follow",
   };
+
+  // Send HTTP Request
+  async function fetchData() {
+    await fetch(uc_props.api_endpoint, requestOptions)
+      .then((response) => response.text())
+      .then((result) => setData(result))
+      .catch((error) => setErrors(error));
+  }
+
+  useEffect(() => {
+    fetchData();
+  });
 
   return (
     <>

@@ -29,6 +29,9 @@ function StorageView() {
     },
   ];
 
+  let counted_route = "/analytics/counted";
+  let uncounted_route = "/analytics/uncounted";
+
   let node_1 = {
     name: "Salling - Counted Data",
     url: "/counted",

@@ -43,15 +43,19 @@ function Routes() {
       <Switch>
         <Route path="/login" component={Login} />
         <ProtectedRoute exact={true} path="/" component={HomeView} />
-        <ProtectedRoute path="/analytics" component={AnalyticsView} />
+        <ProtectedRoute
+          exact={true}
+          path="/analytics"
+          component={AnalyticsView}
+        />
         <ProtectedRoute path="/storage" component={StorageView} />
         <ProtectedRoute path="/account" component={AccountView} />
         <ProtectedRoute path="/god_view" component={GodView} />
 
         <ProtectedRoute path="/select_store" component={SelectStore} />
         <ProtectedRoute path="/reset" component={ResetPass} />
-        <ProtectedRoute path="/uncounted" component={Uncounted} />
-        <ProtectedRoute path="/counted" component={Counted} />
+        <ProtectedRoute path="/analytics/Uncounted" component={Uncounted} />
+        <ProtectedRoute path="/analytics/Counted" component={Counted} />
 
         <ProtectedRoute path="/statistics" component={StatisticsView} />
         <ProtectedRoute path="/build-analytics" component={BuildAnalytics} />
