@@ -34,18 +34,22 @@ function Login() {
     };
     fetch(login_endpoint, requestOptions)
       .then((response) => response.json())
-      .then((res) => handleCookie(`Token ${res.token}`));
+      .then((res) => handleCookie(res.token));
   };
 
   // Handle cooke creation
   const handleCookie = (authtoken) => {
-    const cOptions = { path: "/", sameSite: "lax" };
-    try {
-      setCookie("auth", authtoken, cOptions);
-      console.log("Cookie Set - value " + authtoken);
-      return <Redirect to="/" />;
-    } catch (error) {
-      console.log(error);
+    if (authtoken !== undefined) {
+      const cOptions = { path: "/", sameSite: "lax" };
+      try {
+        setCookie("auth", authtoken, cOptions);
+        console.log("Cookie Set - value " + authtoken);
+        return <Redirect to="/" />;
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      console.log("Wrong");
     }
   };
 
