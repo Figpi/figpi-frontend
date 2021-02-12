@@ -1,4 +1,5 @@
 import React from "react";
+import { useCookies } from "react-cookie";
 
 // layout components
 import Navbar from "../components/layouts/navigator/Navbar";
@@ -11,6 +12,8 @@ function Home() {
   // Set page title
   const page_title = "Dashboard";
   document.title = `${page_title} | Figpi`;
+
+  const [cookies, setCookie] = useCookies(["auth"]);
 
   // Path for routing
   let path = [
@@ -37,7 +40,7 @@ function Home() {
       <BreadCrumbBar path={path} />
       <div className="dash--board">
         <div className="container content--area">
-          <h3>{page_title}</h3>
+          <h3>{cookies.auth}</h3>
           <Datatable {...co_props} />
           <Datatable {...uc_props} />
           <Datatable {...co_props} />

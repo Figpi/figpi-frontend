@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-
+import { Link, Redirect, useLocation } from "react-router-dom";
+import { useCookies } from "react-cookie";
 // Icons
 import { IconContext } from "react-icons";
 import * as AiIcons from "react-icons/ai";
@@ -22,9 +22,15 @@ import Sidebar from "../sidebar/Sidebar";
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
+  const [cookies, setCookie, removeCookie] = useCookies(["auth"]);
 
   let isAdmin = false;
   const location = useLocation();
+
+  const removeAuthCookie = () => {
+    removeCookie(["auth"]);
+    return <Redirect to="/login"></Redirect>;
+  };
 
   return (
     <>
@@ -40,9 +46,9 @@ function Navbar() {
 
           <ul className="navbar-nav px-3">
             <li className="nav-item text-nowrap">
-              <Link to="/" className="nav-link log-out">
+              <button onClick={removeAuthCookie()} className="btn btn-success">
                 Sign out
-              </Link>
+              </button>
             </li>
           </ul>
         </header>

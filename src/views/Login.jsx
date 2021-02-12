@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { ParticlesProps } from "react-tsparticles";
+import React, { useState } from "react";
+import { Link, Redirect } from "react-router-dom";
+import { useCookies } from "react-cookie";
 
 // Util-component imports
 import ParticlesConfig from "../components/utils/ParticlesConfig";
@@ -9,6 +9,45 @@ function Login() {
   // Set page title
   const page_title = "Login";
   document.title = `${page_title} | Figpi`;
+
+  // POST Request to login
+  const [cookies, setCookie, removeCookie] = useCookies(["auth"]);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [authtoken, setAuthToken] = useState("");
+
+  const onUsernameChange = (e) => setUsername(e.target.value);
+  const onPasswordChange = (e) => setPassword(e.target.value);
+
+  // Handle Submit of user credentials
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const login_endpoint =
+      "https://figpi-backend.herokuapp.com/api/accounts/login";
+
+    const data = { username, password };
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    };
+    fetch(login_endpoint, requestOptions)
+      .then((response) => response.json())
+      .then((res) => handleCookie(`Token ${res.token}`));
+  };
+
+  // Handle cooke creation
+  const handleCookie = (authtoken) => {
+    const cOptions = { path: "/", sameSite: "lax" };
+    try {
+      setCookie("auth", authtoken, cOptions);
+      console.log("Cookie Set - value " + authtoken);
+      return <Redirect to="/" />;
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="login--screen p-0">
@@ -24,35 +63,40 @@ function Login() {
                   platform.
                 </small>
               </div>
-              <form
-                method="POST"
-                action="https://www.cloud.figpi.com/api/accounts/login"
-              >
+              <form>
                 <div className="mb-4">
-                  <label className="mb-2" for="exampleInputEmail">
-                    Your e-mail
+                  <label className="mb-2" htmlFor="exampleInputUsername">
+                    Your Username
                   </label>
                   <input
-                    type="email"
+                    type="text"
                     className="form-control"
-                    placeholder="Email address"
-                    id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
+                    id="exampleInputUsername"
+                    aria-describedby="UsernameHelp"
+                    placeholder="Username"
+                    value={username}
+                    onChange={onUsernameChange}
                   />
                 </div>
-                <label className="mb-2" for="Password">
+                <label className="mb-2" htmlFor="Password">
                   Password
                 </label>
                 <div className="mb-4">
                   <input
                     type="password"
                     className="form-control"
-                    placeholder="Password"
                     id="exampleInputPassword1"
+                    placeholder="Password"
+                    value={password}
+                    onChange={onPasswordChange}
                   />
                 </div>
 
-                <button type="submit" className="btn btn-block btn-auth mt-4">
+                <button
+                  type="submit"
+                  className="btn btn-block btn-auth mt-4"
+                  onClick={handleSubmit}
+                >
                   Log in
                 </button>
               </form>

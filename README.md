@@ -8,6 +8,10 @@
 
 - https://github.com/framer/motion
 
+## React Cookie
+
+- Docs: https://www.npmjs.com/package/react-cookie
+
 ## Notifications
 
 - https://github.com/teodosii/react-notifications-component/

@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
+import { useCookies } from "react-cookie";
 
 // Main Views
 import HomeView from "../views/Home";
@@ -27,9 +28,9 @@ import DemoView from "../views/DemoView";
 // Protected Route Function
 function ProtectedRoute(props) {
   const Component = props.component;
-  const isAuthenticated = true;
+  const [cookies, setCookie, removeCookie] = useCookies(["auth"]);
 
-  return isAuthenticated ? (
+  return cookies.auth ? (
     <Component />
   ) : (
     <Redirect to={{ pathname: "/login" }} />
